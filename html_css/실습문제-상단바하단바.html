@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 레이아웃</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f1e9e2;
+        color: #333;
+      }
+
+      #container {
+        max-width: 1280px;
+        min-width: 768px;
+        margin: 0 auto;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        padding: 0 16px;
+        background-color: #fefefe;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+        background-color: #d4a373;
+        border-radius: 6px;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        flex: 1; /* ✅ 추가 */
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #006241;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 6px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #d4a373;
+        color: #fff;
+      }
+
+      .hamburger {
+        width: 50px;
+        height: 50px;
+        background-color: #d4a373;
+        border-radius: 6px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .hamburger i {
+        color: #fff;
+        font-size: 20px;
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 16px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .mobile-menu a {
+        padding: 8px;
+        font-size: 16px;
+        color: #006241;
+        text-decoration: none;
+      }
+
+      .mobile-menu a:hover {
+        background-color: #d4a373;
+        color: white;
+        border-radius: 4px;
+      }
+
+      main {
+        flex-grow: 1;
+        padding: 40px;
+        background-color: #fdfaf6;
+      }
+
+      footer {
+        height: 60px;
+        background-color: #006241;
+        color: white;
+        text-align: center;
+        line-height: 60px;
+        font-size: 14px;
+      }
+
+      /* ✅ 미디어쿼리: 768px 이하 */
+      @media screen and (max-width: 768px) {
+        nav {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div class="logo"></div>
+        <nav>
+          <a href="#">정치</a>
+          <a href="#">경제</a>
+          <a href="#">사회</a>
+          <a href="#">문화</a>
+        </nav>
+        <div
+          class="hamburger"
+          role="button"
+          aria-label="메뉴 열기"
+          onclick="toggleMenu()"
+        >
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- 모바일 메뉴 -->
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="#">정치</a>
+          <a href="#">경제</a>
+          <a href="#">사회</a>
+          <a href="#">문화</a>
+        </div>
+      </header>
+
+      <main>
+        <p>콘텐츠 영역입니다</p>
+      </main>
+
+      <footer>© 2025 My News Site</footer>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
+  </body>
+</html>

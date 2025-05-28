@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 200px;
+        height: 100px;
+        background-color: royalblue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button>버튼</button>
+    <input type="text" name="" id="" />
+    <a href="https://www.naver.com">네이버 이동</a>
+    <a href="https://www.daum.net">다음 이동</a>
+    <script>
+      const btnEl = document.querySelector("button");
+      btnEl.addEventListener("click", function (event) {
+        // 이벤트 객체
+        console.log(`clientX:${event.clientX}`);
+        console.log(`clientY :${event.clientY}`);
+        console.log(`pageX:${event.pageX}`);
+        console.log(`pageY:${event.pageY}`);
+        console.log(`screenX:${event.screenX}`);
+        console.log(`screenY :${event.screenY}`);
+      });
+      const inputEl = document.querySelector("input");
+      inputEl.addEventListener("keydown", (event) => {
+        console.log(`keyCode:${event.keyCode}`);
+        console.log(`ctrlKey:${event.ctrlKey}`);
+        console.log(`altKey:${event.altKey}`);
+        console.log(`shiftKey:${event.shiftKey}`);
+      });
+      const aEls = document.querySelectorAll("a");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(226, 244, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 20px);
+      }
+      .container {
+        background-color: white;
+        width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .input-box {
+        position: relative;
+        margin-bottom: 24px;
+      }
+      .input-box input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+      .input-box input:focus {
+        border-color: #007bff;
+      }
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .login-reg-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+      .login-reg-btn {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>로그인</h1>
+      <!-- <form action=""> -->
+      <div class="input-box">
+        <input
+          type="text"
+          placeholder="아이디"
+          id="id-txt"
+          name="username"
+          required
+        />
+      </div>
+      <div class="input-box">
+        <input
+          type="password"
+          placeholder="비밀번호"
+          id="pwd-txt"
+          name="password"
+          required
+        />
+      </div>
+      <button type="submit" class="login-btn" onclick="check()">로그인</button>
+      <div class="login-reg-container">
+        <a href="" class="login-reg-btn">회원가입</a>
+      </div>
+      <!-- </form> -->
+      <script>
+        const inputUser = {
+          id: "",
+          pw: "",
+        };
+
+        const inputId = document.getElementById("id-txt");
+        inputId.addEventListener("input", (e) => {
+          console.log(e.target.value);
+          inputUser.id = e.target.value;
+        });
+
+        const inputPw = document.getElementById("pwd-txt");
+        inputPw.addEventListener("input", (e) => {
+          console.log(e.target.value);
+          inputUser.pw = e.target.value;
+        });
+
+        const test = () => {
+          console.log(inputUser);
+        };
+
+        const savedUser = JSON.parse(localStorage.getItem("user"));
+        console.log(savedUser);
+
+        function check() {
+          if (savedUser.id === inputUser.id && savedUser.pw === inputUser.pw) {
+            alert("ok");
+            document.location.href = "./클론_kolmar.html";
+          } else {
+            alert("틀렸음");
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>

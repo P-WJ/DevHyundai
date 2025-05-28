@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- 
+- 전체 박스 가로 크기 300px (배경색상 royalblue)
+- 내부 박스 크기 100px의 정사각형 (배경 색상 orange)
+- 선 두께 4px 
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .bbox {
+      background-color: royalblue;
+      width: 300px;
+      position: relative;
+
+    }
+    .box {
+      background-color: orange;
+      width: 100px;
+      height: 100px;
+      border: 4px dashed orangered;
+    }
+    .box1 {
+      position: relative;
+      
+    }
+    .box2 {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+    .box3 {
+      position: relative;
+    }
+    :hover {
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+<div class="bbox">
+  <div class="box box1">1</div>
+  <div class="box box2">2</div>
+  <div class="box box3">3</div>
+</div>
+
+
+</body>
+</html>

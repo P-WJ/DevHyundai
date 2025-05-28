@@ -1,0 +1,176 @@
+function popupAjax(target,test){
+	$(".pop-bg").remove();
+	$(".pop-bg").hide();
+	$("body").append('<div class="pop-bg"></div>');
+	$("body").css("overflow-y","hidden")
+	$(".lang_w .dep").hide()
+	$.ajax({
+		url: test,
+		success: function(result){
+			$(".pop-bg").html(result);
+			$(".close").click(function(){
+				$(this).closest(".pop-bg").remove();
+				$(target).focus();
+				$("body").css("overflow-y","visible")
+				return false;
+			});
+		}
+	});
+}
+
+$(function(){
+	var nowNums = 0;
+	var imgLegnth = $(".img_box .in img").length;
+
+	$(".img_box button").click(function(e){
+		if( $(this).hasClass("left") ){
+			( nowNums < 1 ) ? nowNums = imgLegnth-1 : nowNums --;
+		}else{
+			( nowNums > imgLegnth - 2 ) ? nowNums = 0 : nowNums++;
+		}
+		$(".img_box .in img").hide().eq(nowNums).show();
+		e.preventDefault();
+	})
+
+	$(".main_layer span").click(function(){
+		$(".main_layer").hide();
+	})
+
+	$(".link_btn").click(function(){
+		$(".img_layer").toggle();
+		return false;
+	})
+
+	$(".img_layer span").click(function(){
+		$(".img_layer").hide();
+	})
+
+
+})
+ //check browser
+var isie=(/msie/i).test(navigator.userAgent); //ie
+var isie6=(/msie 6/i).test(navigator.userAgent); //ie 6
+var isie7=(/msie 7/i).test(navigator.userAgent); //ie 7
+var isie8=(/msie 8/i).test(navigator.userAgent); //ie 8
+var isie9=(/msie 9/i).test(navigator.userAgent); //ie 9
+var isie10=(/msie 10/i).test(navigator.userAgent); //ie 9
+var isfirefox=(/firefox/i).test(navigator.userAgent); //firefox
+var isapple=(/applewebkit/i).test(navigator.userAgent); //safari,chrome
+var isopera=(/opera/i).test(navigator.userAgent); //opera
+var isios=(/(ipod|iphone|ipad)/i).test(navigator.userAgent);//ios
+var isipad=(/(ipad)/i).test(navigator.userAgent);//ipad
+var isandroid=(/android/i).test(navigator.userAgent);//android
+var device;
+//if(isie7 || isie8 || isie9){ isie6=false;}
+//if(isie9){ isie=false;}
+//if(isapple || isios || isipad || isandroid){}else{}
+
+
+(function (w) {
+    // version check
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    /*if (msie > 0 && parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)), 10) <= 7) {*/
+   //   alert((/msie 7 Trident/i).test(navigator.userAgent));
+    if(isie6){
+      //alert(ua);
+
+        location.href = '/NoticeIE6.html';
+    }
+})(window);
+
+function LayerPopup_type(obj){
+    var backgound = $("<div>").attr({
+         "class": "popup_background"
+     }).css({
+       "background":"#000",
+       "width": "100%",
+       "height": "100%",
+       "position": "fixed",
+       "left": 0,
+        "top": 0,
+        "z-index":100,
+        "opacity":0.8,
+  "filter":"alpha(opacity=80)"
+     });
+    $("body").append(backgound);
+
+
+  var id_Motion = $(".layerPopup");
+
+  if(obj =="close"){
+    //for(var i=0; i<=id_Motion.length; i++){
+      //$(id_Motion[i]).css("display","none");
+	  $("#list_pwd_chk").val('');
+      id_Motion.css("display","none");
+      $(".popup_background").remove();
+    //}
+  }else{
+    for(var i=0; i<=id_Motion.length; i++){
+      $(id_Motion[i]).css("display","none");
+    }
+    var top = $(window).scrollTop();
+    var width = $(obj).outerWidth();
+	var windowHeight = $(window).height();
+	var height =  $(obj).outerHeight();
+
+    $(obj).css({
+      "display":"block",
+      "z-index":120,
+      "left":"50%",
+      "top":top+((windowHeight - height)/2),
+      "margin-left":-(width/2)
+    });
+
+  }
+
+
+
+}//LayerPopup_type
+
+
+
+equalheight = function(obj){
+
+var currentTallest = 0,
+     currentRowStart = 0,
+     rowDivs = new Array(),
+     $el,
+     topPosition = 0;
+
+
+ $(obj).each(function() {
+   $el = $(this);
+   $($el).height('auto')
+   topPostion = $el.position().top;
+	alert(currentRowStart != topPostion);
+   if (currentRowStart != topPostion) {
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+     rowDivs.length = 0; // empty the array
+     currentRowStart = topPostion;
+     currentTallest = $el.height();
+     rowDivs.push($el);
+   } else {
+     rowDivs.push($el);
+     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+  }
+   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+     rowDivs[currentDiv].height(currentTallest);
+   }
+ });
+}
+
+
+jQuery(function(){
+jQuery( "#tabs" ).tabs();
+});
+
+
+$(function(){
+    $(".langArea").on("click",function(){
+        $(".lst").slideToggle(150);
+    });
+})

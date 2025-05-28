@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(226, 244, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 20px);
+      }
+      .container {
+        background-color: white;
+        width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .input-box {
+        position: relative;
+        margin-bottom: 24px;
+      }
+      .input-box input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+      .input-box input:focus {
+        border-color: #007bff;
+      }
+      .input-box p {
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+        color: red;
+        font-size: 0.875em;
+        margin: 0;
+      }
+      .input-box p.valid {
+        color: #28a745;
+      }
+      .reg-req-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+        color: #fff;
+        background-color: #6c757d;
+        border: none;
+        border-radius: 5px;
+        cursor: not-allowed;
+        transition: background-color 0.3s ease;
+      }
+      .reg-req-btn.enabled {
+        background-color: #007bff;
+        cursor: pointer;
+      }
+      .reg-req-btn:active {
+        position: relative;
+        top: 2px;
+        left: 2px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>회원가입</h1>
+      <form action="./로그인.html">
+        <div class="input-box">
+          <input
+            type="text"
+            placeholder="아이디"
+            id="id-txt"
+            name="username"
+            required
+          />
+          <p id="id-check"></p>
+        </div>
+        <div class="input-box">
+          <input
+            type="password"
+            placeholder="비밀번호"
+            id="pwd-txt"
+            name="password"
+            required
+          />
+          <p id="pw-check"></p>
+        </div>
+        <div class="input-box">
+          <input
+            type="email"
+            placeholder="이메일"
+            id="email-txt"
+            name="email"
+            required
+          />
+          <p id="email-check"></p>
+        </div>
+        <div class="input-box">
+          <input
+            type="tel"
+            placeholder="연락처"
+            id="phone-txt"
+            name="phone"
+            required
+          />
+          <p id="phone-check"></p>
+        </div>
+        <button class="reg-req-btn" onclick="test()" disabled>가입요청</button>
+      </form>
+      <script>
+        const regexId = /^\w{8,20}$/;
+        const regexPw =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const regexMail = /^([a-z]+\d*)+(\.?\w+)+@\w+(\.\w{2,3})+$/;
+        const regexTel = /^\d{2,3}-\d{3,4}-\d{4}$/;
+        const user = {
+          id: "",
+          pw: "",
+          email: "",
+          phone: "",
+        };
+
+        const idInput = document.getElementById("id-txt");
+        idInput.addEventListener("input", (e) => {
+          console.log(e.target.value);
+          user.id = e.target.value;
+          console.log(user);
+        });
+
+        const pwInput = document.getElementById("pwd-txt");
+        pwInput.addEventListener("input", (e) => {
+          console.log(e.target.value);
+          user.pw = e.target.value;
+        });
+        const mailInput = document.getElementById("email-txt");
+        mailInput.addEventListener("input", (e) => {
+          console.log(e.target.value);
+          user.email = e.target.value;
+          console.log(user);
+        });
+        const telInput = document.getElementById("phone-txt");
+        telInput.addEventListener("input", (e) => {
+          console.log(e.target.value);
+          user.phone = e.target.value;
+          console.log(user);
+        });
+        const submitButton = document.querySelector(".reg-req-btn");
+
+        const idCheck = document.getElementById("id-check");
+        const pwCheck = document.getElementById("pw-check");
+        const mailCheck = document.getElementById("email-check");
+        const phoneCheck = document.getElementById("phone-check");
+
+        function validateInput(input, regex, el) {
+          if (regex.test(input.value)) {
+            el.textContent = "사용 가능 합니다.";
+            el.classList.add("valid");
+            el.classList.remove("invalid");
+            return true;
+          } else {
+            el.textContent = "입력 조건이 맞지 않습니다.";
+            el.classList.add("invalid");
+            el.classList.remove("valid");
+            return false;
+          }
+        }
+
+        function updateSubmitButton() {
+          const isIdValid = validateInput(idInput, regexId, idCheck);
+          const isPwValid = validateInput(pwInput, regexPw, pwCheck);
+          const isMailValid = validateInput(mailInput, regexMail, mailCheck);
+          const isPhoneValid = validateInput(telInput, regexTel, phoneCheck);
+
+          if (isIdValid && isPwValid && isMailValid && isPhoneValid) {
+            submitButton.disabled = false;
+            submitButton.classList.add("enabled");
+          } else {
+            submitButton.disabled = true;
+            submitButton.classList.remove("enabled");
+          }
+        }
+        idInput.addEventListener("input", () => updateSubmitButton());
+        pwInput.addEventListener("input", () => updateSubmitButton());
+        mailInput.addEventListener("input", () => updateSubmitButton());
+        telInput.addEventListener("input", () => updateSubmitButton());
+
+        const test = () => {
+          console.log(user);
+          localStorage.setItem("user", JSON.stringify(user));
+          // document.location.href='로그인인'
+        };
+      </script>
+    </div>
+  </body>
+</html>

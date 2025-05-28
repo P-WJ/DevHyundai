@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      max-width: 1280px;
+      min-width: 768px;
+
+    }
+    .container {
+      background-color: royalblue;
+      display: flex;
+      justify-content: space-between;
+
+    }
+    .box {
+      background-color: orange;
+      width: 80px;
+      height: 80px;
+      border: 2px dashed orangered;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5px;
+    }
+    .menubar {
+      border: 2px dashed black;
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      margin: 5px;
+      
+    }
+    .menu {
+      width: 80px;
+      height: 80px;
+      color: white;
+      background-color: rgb(35, 32, 32);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">1</div>
+    <div class="menubar">
+    <div class="menu">메뉴1</div>
+    <div class="menu">메뉴2</div>
+    <div class="menu">메뉴3</div>
+    <div class="menu">메뉴4</div>
+  </div>
+    <div class="box">3</div>    
+  </div>
+</body>
+</html>

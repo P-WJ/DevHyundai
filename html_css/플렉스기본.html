@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-self: center;
+      align-items: center; /* 높이 설정해야 가운데 정렬됨*/
+    }
+    .flex-container {
+      width: 300px;
+      height: 200px;
+      background-color: bisque;
+      border: 1px solid black;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly; /* 주축 정렬 */
+      align-items: center; /*교차축 정렬*/
+      
+
+    }
+    .flex-item {
+      width: 80px;
+      height: 50px;
+      text-align: center;
+      border: 1px solid darkblue;
+      color: white;
+      background-color: orange;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flex-item:nth-child(2n) {
+      background-color: orangered;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="flex-item">item1</div>
+    <div class="flex-item">item2</div>
+    <div class="flex-item">item3</div>
+    <div class="flex-item">item4</div>
+    <div class="flex-item">item5</div>
+    <div class="flex-item">item6</div>
+    <div class="flex-item">item7</div>
+    <div class="flex-item">item8</div>
+    <div class="flex-item">item9</div>
+
+
+  </div>
+</body>
+</html>

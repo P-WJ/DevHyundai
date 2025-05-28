@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+  rel="stylesheet"
+/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+    
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+      height: 100vh;
+      background: #f9f9f9;
+    }
+    .login-box {
+      width: 304px;
+      height: 390px;
+      padding:28px 30px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    .google-login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      font-weight: bold;
+      color: #504f4f;
+      margin-bottom: 44px;
+    }
+    .google-login img {
+      width: 18px;
+      margin-right: 10px;
+    }
+    .or {
+        text-align: center;
+        color: #504f4f;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 44px;
+      }
+      .login-input {
+        width: 228px;
+        height: 44px;
+        background: #eaeaea;
+        border: none;
+        margin-bottom: 16px;
+        padding-left: 10px;
+        font-size: 14px;
+        color: #504f4f;
+      }
+      .login-button {
+        width: 228px;
+        height: 44px;
+        background-color: #373f3c;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 16px;
+      }
+
+      .forgot-password {
+        text-align: center;
+        font-size: 14px;
+        color: #2c3432;
+        text-decoration: none;
+        display: block;
+      }
+  </style>
+</head>
+  <body>
+    <div class="login-box">
+      <div class="google-login">
+        <i style="margin-right: 6px" class="fa-brands fa-google"></i>
+        Log in with Google
+      </div>
+      <div class="or">or</div>
+      <input class="login-input" type="text" placeholder="Username" />
+      <input class="login-input" type="password" placeholder="Password" />
+      <button class="login-button">LOGIN</button>
+      <a href="#" class="forgot-password">Forgot your password?</a>
+    </div>
+  </body>
+</html>

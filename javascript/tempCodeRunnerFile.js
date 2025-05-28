@@ -1,0 +1,1 @@
+const json = JSON.stringify(memberInfo);

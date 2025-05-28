@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">문서 제목 입니다.</h1>
+    <p class="text">첫 번째 단락 입니다.</p>
+    <p class="text">두 번째 단락 입니다.</p>
+    <p>세 번째 단락 입니다.</p>
+    <script>
+      // 문서의 최상위 노드
+      let doc = document.firstChild;
+      console.log(doc);
+      // 실제 HTML 루트 요소
+      let html = document.firstElementChild;
+      console.log(html);
+      // ID로 선택하기
+      const el = document.getElementById("title");
+      console.log(el.innerText);
+      // 클래스명으로 선택하기
+      const classEls = document.getElementsByClassName("text");
+      for (const el of classEls) {
+        console.log(el);
+      }
+      // 태그명으로 선택하기
+      const tagEls = document.getElementsByTagName("p");
+      for (const el of tagEls) {
+        console.log(el);
+      }
+      // query Selector
+      const queryEl = document.querySelector("#title");
+      console.log("query: ", queryEl);
+      const queryEls = document.querySelectorAll("p");
+      console.log("querys: ", queryEls);
+    </script>
+  </body>
+</html>

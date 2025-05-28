@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container {
+    margin: 40px;
+    width: 300px;
+    height: 1000px;
+    background-color: bisque;
+    position: relative;
+  }
+  .box {
+    width: 100px;
+    height: 100px;
+  }
+  .red-box {
+    position: absolute;
+    background-color: red;
+    left: 10px;
+    top: 10px;
+    z-index: 1;
+    /* z-index는 static에서 안먹힘 */
+  }
+  .green-box {
+    background-color: green;
+    position: relative;
+    left: 80px;
+    top: 80px;
+    z-index: 2;
+  }
+  .blue-box {
+
+    /* 뷰포트 기준으로 고정 */
+    background-color: blue;
+    position: sticky;
+    top: 40px;
+    z-index: 3;
+  }
+  .title-box {
+    position: fixed;
+    width: 500px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    background-color: orange;
+  }
+</style>
+<body>
+  <div class="container">
+ <div class="box red-box"></div>
+ <div class="box green-box"></div>
+ <div class="box blue-box"></div>
+ <div class="box title-box"></div>
+</div>
+</body>
+</html>

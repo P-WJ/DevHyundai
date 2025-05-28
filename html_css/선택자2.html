@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* 그룹 선택자 */
+    p, #title, .red {
+      color: red;
+    }
+
+    /* 자식 선택자 : 직계 자식*/
+    .box > p {
+      color: royalblue;
+    }
+
+    /* 뒤에 오는 모든 형제 선택 */
+    h1 ~ h2 {
+      color: orange;
+    }
+    /* 가상 요소 선택자 : 실제로는 존재하지 않는 가상의 부분에 스타일 적용 */
+    h1::after {
+      content: "@@";
+      color: red;
+    }
+    /* 가상 클래스 선택자 :요소의 특정 상태를 기반으로 스탈 적용 */
+    a:link {
+      color: orange;
+    }
+    a:visited {
+      color: green;
+    }
+    /* 동적 가상 클래스 선택자 : 사용자의 동작 상태에 따라서 동적으로 변하는 상태 */
+    button {
+      width: 150px;
+      height: 40px;
+      background-color: darkgreen;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:active {
+      background-color: rgb(12, 41, 12);
+      transform: translate(1px, 1px);
+    }
+    /* 입력 요소 가상 클래스 선택자 : focus, checked, disabled, enabled */
+    input:focus {
+      background-color: pink;
+    }
+    input:disabled {
+      background-color: darkgray;
+    }
+    /* 구조적 가상 클래스 선택자 : 요소의 구조와 위치에 따라 스타일을 적용하는 방법 */
+    li:first-child {
+      color: royalblue;
+    }
+    li:last-child {
+      color: orangered;
+    }
+    li:nth-child(2) {
+      color: gray;
+    }
+    li:nth-last-child(2) {
+      color: aqua;
+    }
+
+  </style>
+</head>
+<body>
+  <p>색상 확인</p>
+  <div id="title">제목 색상</div>
+  <nav class="red">클래스 선택자</nav>
+  <div class="box">
+    <p>저는 자식 1번 입니다.</p>
+    <p>저는 자식 2번 입니다.</p>
+    <div>
+      <p>저는 자식의 자식 1번 입니다.</p>
+    </div>
+  </div>
+
+  <h1>인접 형제 1번 입니다.</h1>
+  <h2>인접 형제 2-1번 입니다.</h2>
+  <h2>인접 형제 2-2번 입니다.</h2>
+  <h3>인접 형제 3번 입니다.</h3>  
+  <a href="http://kakao.com">카카오</a>
+  <br>
+  <button>초록색 버튼</button>
+  <br>
+  <label>입력 확인<input type="text"></label>
+  <br>
+  <label>비활성화화 확인<input type="text" disabled></label>
+  <ul>
+    <li>리스트 1번</li>
+    <li>리스트 2번</li>
+    <li>리스트 3번</li>
+    <li>리스트 4번</li>
+    <li>리스트 5번</li>
+  </ul>
+
+</body>
+</html>

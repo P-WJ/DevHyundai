@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      id="btn"
+      onclick="changeBG('green')"
+      style="background-color: Green"
+    >
+      Green
+    </button>
+    <button
+      id="btn"
+      onclick="changeBG('orange')"
+      style="background-color: orange"
+    >
+      Orange
+    </button>
+    <button
+      id="btn"
+      onclick="changeBG('purple')"
+      style="background-color: purple"
+    >
+      Purple
+    </button>
+
+    <div
+      style="border: 1px solid gray; width: 200px; height: 200px"
+      id="colorBox"
+    ></div>
+
+    <script>
+      function changeBG(color) {
+        const color_box = document.querySelector("#colorBox");
+        color_box.style.background = color;
+      }
+    </script>
+  </body>
+</html>

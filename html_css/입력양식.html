@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="처리할 페이지 주소" method="get">
+        <input type="text" name="username" id="username" value="이름">
+        <input type="password" name="pwd" value="비밀번호">
+    </form>
+    <!-- 라디오 버튼 (for ?) -->
+     <label><input type="radio" name="gender" value="male">남성</label>
+     <label><input type="radio" name="gender" value="female">여성</label>
+     <br>
+     <label for="user-id">아이디</label>
+     <input type="text" id="user-id">
+     <!-- 그룹화 -->
+      <fieldset>
+        <legend>회원가입</legend>
+        <label>아이디 <input type="text"></label>
+        <label>비밀번호 <input type="password"></label>
+      </fieldset>
+      <!-- 다중 줄 입력 -->
+       <textarea name="desc"readonly rows="5" cols="30">초기내용</textarea>
+       
+       <!-- 셀렉트 박스 -->
+        <select name="city">
+            <option value="seoul">서울</option>
+            <option value="busan">부산</option>
+            
+        </select>
+        
+        <!-- 버튼 -->
+         <input type="button">
+         <button type="submit">버튼</button>
+       <script>
+        const input = document.getElementById("username");
+        input.addEventListener("input", function(e) {
+            console.log(e.input.value);
+        });
+        
+       </script>
+       </body>
+</html>

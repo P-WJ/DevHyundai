@@ -1,0 +1,716 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Noto sans KR;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 300;
+  background-color: #19191e80;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+.m1-li1-left p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 85px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.nav-inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 100px;
+}
+.logo-container {
+  width: 150px;
+  height: 50px;
+  background-image: url(./한국콜마_files/logo.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.menu-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: 50px;
+}
+.menu {
+  position: relative;
+  margin-left: 30px;
+}
+
+.menu a {
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  line-height: 85px;
+  font-size: 18px;
+  font-family: poppins;
+  font-weight: 500;
+}
+.btn-lang-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  line-height: 85px;
+  font-size: 14px;
+  font-family: poppins;
+  font-weight: 500;
+}
+.btn-lang-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn-lang {
+  width: 9px;
+  height: 9px;
+  background-image: url(./한국콜마_files/lang.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 10px;
+}
+.submenu-wrapper {
+  display: none;
+  position: absolute;
+  top: 85px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px 0;
+  z-index: 200;
+  font-size: 16px;
+}
+
+.submenu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-right: 10px;
+}
+
+.submenu ul {
+  list-style: none;
+  text-align: center;
+  width: 120px;
+}
+
+.submenu ul li a {
+  color: #535353;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  padding: 5px 0;
+  margin-left: 20px;
+  font-family: Noto sans KR;
+}
+header:hover .menu a {
+  color: black;
+}
+header:hover .btn-lang-container {
+  color: black;
+}
+header:hover .btn-lang {
+  background-image: url(./한국콜마_files/lang_active.png);
+}
+header:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid #aeb4bd;
+}
+header:hover .logo-container {
+  background-image: url(./한국콜마_files/logo_active.png);
+}
+header:hover .submenu-wrapper {
+  display: block;
+}
+
+.submenu a:hover {
+  color: blue;
+}
+
+video {
+  position: relative;
+  width: 1440px;
+  left: 0;
+  top: 0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+.m1 {
+  /* width: 100%;
+  /* height: 715.6px; */
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center;  */
+
+  padding: 100px 0;
+  display: block;
+}
+.m1_inner {
+  /* width: 100%;
+  height: 515.6px;
+  display: flex;
+  justify-content: space-evenly; */
+  /* flex-wrap: wrap; */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.view_more {
+  margin-top: 40px;
+}
+.view_more a {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  margin: 30px 0px 0px;
+  padding: 10px 40px;
+  font-weight: bolder;
+  font-family: Roboto;
+}
+.s1 {
+  /* width: 334.88px;
+  height: 289.6px;
+  display: flex;
+  flex-direction: column; */
+
+  margin-left: -4%;
+}
+.m1-li1 {
+  width: 23%;
+  float: left;
+  margin-left: 4%;
+}
+
+.m1-li2 {
+  width: 42%;
+  float: left;
+  margin-left: 4%;
+}
+
+.m1-li3 {
+  width: 23%;
+  float: left;
+  margin-left: 4%;
+}
+
+.m1-li3-container {
+  margin-top: 50px;
+}
+
+.m1-li3-container:first-child {
+  margin-top: 0;
+}
+
+.m1-underline {
+  color: #000;
+  font-size: 1.4em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.m1-icon {
+  width: 68px;
+  margin-right: 3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.s2 {
+  width: 611.51px;
+  height: 515.6px;
+}
+.s3 {
+  display: flex;
+  flex-direction: column;
+
+  width: 334.88px;
+  height: 368.26px;
+}
+.m_add {
+  width: 100%;
+  height: 261.4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./한국콜마_files/m_bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.add_clearfix {
+  width: 1400px;
+  height: 91.4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.cbox {
+  width: 367px;
+  height: 91.4px;
+  border-left: 4px solid royalblue;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.cbox-txt {
+  text-decoration: none;
+  color: black;
+}
+.cbox-icon-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+.cbox-txt-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+.m3 {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.m3_inner {
+  width: 1400px;
+  height: 541.8px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.s4 {
+  width: 334.88px;
+  height: 340.9px;
+}
+.s5 {
+  width: 1004.64px;
+  height: 541.8px;
+}
+
+.slider {
+  width: 846.64px;
+  height: 541.8px;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  top: 100px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  position: absolute;
+  right: 130px;
+  background-color: white;
+}
+
+.slides {
+  display: flex;
+  width: calc(423px * 11);
+  animation: slideAnim 33s infinite;
+}
+
+.slide {
+  width: 423px;
+  height: 270.9px;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes slideAnim {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(-423px);
+  }
+  20% {
+    transform: translateX(-423px);
+  }
+
+  20% {
+    transform: translateX(-846px);
+  }
+  30% {
+    transform: translateX(-846px);
+  }
+
+  30% {
+    transform: translateX(-1269px);
+  }
+  40% {
+    transform: translateX(-1269px);
+  }
+
+  40% {
+    transform: translateX(-1692px);
+  }
+  50% {
+    transform: translateX(-1692px);
+  }
+
+  50% {
+    transform: translateX(-2115px);
+  }
+  60% {
+    transform: translateX(-2115px);
+  }
+
+  60% {
+    transform: translateX(-2538px);
+  }
+  70% {
+    transform: translateX(-2538px);
+  }
+
+  70% {
+    transform: translateX(-2961px);
+  }
+  80% {
+    transform: translateX(-2961px);
+  }
+
+  80% {
+    transform: translateX(-3384px);
+  }
+  90% {
+    transform: translateX(-3384px);
+  }
+
+  90% {
+    transform: translateX(-3807px);
+  }
+  100% {
+    transform: translateX(-3807px);
+  }
+}
+
+.t {
+  margin: 10px;
+  font-size: 22px;
+}
+.txt {
+  margin: 10px;
+  font-size: 19px;
+  color: #555555;
+  font-weight: 400;
+}
+
+.m4 {
+  width: 100%;
+  height: 300.25px;
+  background-image: url(./한국콜마_files/m4.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.m5 {
+  width: 100%;
+  height: 1001.6px;
+  display: flex;
+
+  align-items: center;
+}
+.m5_inner {
+  width: 100%;
+  height: 801.6px;
+  display: flex;
+}
+.m5_left {
+  width: 677.74px;
+  height: 728.66px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 43.25px;
+}
+
+.s6 {
+  width: 100%;
+  height: 289.6px;
+}
+
+.m5_img1 {
+  background-image: url(./한국콜마_files/m5_1.jpg);
+  width: 100%;
+  height: 100%;
+  margin: 50px 0px 0px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.m5-img-container {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-top-right-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+.m5_img2 {
+  background-image: url(./한국콜마_files/m5_2.jpg);
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.m5_img3 {
+  background-image: url(./한국콜마_files/m5_3.jpg);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.m5_right {
+  width: 677.74px;
+  height: 801.6px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-left: 43.25px;
+}
+.m2 {
+  width: 100%;
+  height: 435.93px;
+  display: flex;
+  justify-content: center;
+}
+.m2_inner {
+  width: 100%;
+  height: 335.93px;
+  display: flex;
+  justify-content: center;
+  gap: 43.25px;
+}
+.m2_left {
+  width: 669.75px;
+  height: 335.93px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.m2_right {
+  width: 669.75px;
+  height: 335.93px;
+  display: flex;
+  flex-direction: column;
+}
+.m2-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.m2-title-left {
+  font-size: 21px;
+}
+.m2-title-right {
+  font-size: 16px;
+  color: #999;
+}
+.underline {
+  border-bottom: 1px solid rgb(184, 184, 184);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.m2-underline {
+  border-bottom: 1px solid rgb(184, 184, 184);
+  padding: 39px 0px;
+  font-weight: 400;
+}
+footer {
+  width: 100%;
+  height: 285.2px;
+  position: relative;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  border-top: 1px solid rgb(184, 184, 184);
+  border-bottom: 1px solid rgb(184, 184, 184);
+}
+
+.footer-top-left {
+  display: flex;
+  align-items: center;
+  flex-grow: 7;
+}
+
+.footer-top-left a {
+  color: #555555;
+  font-size: 17.6px;
+  text-decoration: none;
+  padding: 0px 0px 0px 24px;
+}
+.footer-top-right {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin: 20px;
+}
+.footer-top-right-select {
+  display: flex;
+  align-items: center;
+}
+.footer-top-right-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-bottom {
+  width: 100%;
+  height: 182.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-bottom-inner {
+  width: 100%;
+  display: flex;
+  margin: 0px 20px;
+  margin-bottom: 30px;
+}
+.footer-bottom-logo {
+  display: flex;
+  width: 150px;
+  height: 32px;
+  margin-right: 70px;
+}
+.footer-bottom-txt {
+  display: flex;
+  flex-direction: column;
+  width: 920px;
+  color: #555555;
+  gap: 3px;
+}
+.footer-bottom-icn {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 60px;
+  gap: 5px;
+}
+.footer-bottom-icn img {
+  width: 50px;
+  height: 50px;
+}
+
+.go-top {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #000;
+  position: fixed;
+  border-radius: 50%;
+  background: url(./한국콜마_files/f_sel.png) center center no-repeat;
+  right: 15px;
+  bottom: 15px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .m1-li1 {
+    width: 96% !important;
+    margin-bottom: 3rem;
+  }
+
+  .m1-li2 {
+    width: 60%;
+  }
+  .m1-li3 {
+    width: 32%;
+  }
+  .go_top {
+    width: 3rem;
+    height: 3rem;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .footer-bottom-txt {
+    align-items: center;
+  }
+  .footer-bottom-logo {
+    justify-content: center;
+  }
+  .footer-bottom-icn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .m1-li2 {
+    width: 96%;
+    margin-bottom: 2.5em;
+  }
+
+  .m1-li3 {
+    width: 96%;
+  }
+}

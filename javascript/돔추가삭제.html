@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>DOM 추가/삭제</h1>
+    <p>공부할 과목을 기록해 보세요.</p>
+    <p>공부가 끝난 과목은 클릭해서 삭제할 수 있습니다.</p>
+    <input type="text" id="subject" />
+    <button onclick="newReg();">추가</button>
+    <hr />
+    <ul id="itemList"></ul>
+
+    <script>
+      function newReg() {
+        // id 선택자로 input 요소 찾음
+        const subject = document.querySelector("#subject");
+        // 새로운 항목을 추가하기 위해 li 태그 생성
+        const newItem = document.createElement("li");
+        newItem.innerText = subject.value;
+        subject.value = "";
+        // 생성된 li 태그 추가
+        const itemList = document.querySelector("#itemList");
+        itemList.appendChild(newItem);
+
+        newItem.addEventListener("dblclick", () => {
+          itemList.removeChild(newItem);
+        });
+      }
+    </script>
+  </body>
+</html>
