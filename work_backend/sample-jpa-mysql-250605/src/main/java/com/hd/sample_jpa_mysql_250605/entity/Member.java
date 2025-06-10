@@ -1,8 +1,8 @@
 package com.hd.sample_jpa_mysql_250605.entity;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Table(name = "member")
 @Getter
 @Setter
-@NoArgsConstructor
+@ToString
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
