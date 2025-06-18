@@ -1,7 +1,6 @@
 package com.hd.sample_jpa_mysql_250605.controller;
 
-import com.hd.sample_jpa_mysql_250605.dto.LoginReqDto;
-import com.hd.sample_jpa_mysql_250605.dto.SignUpReqDto;
+import com.hd.sample_jpa_mysql_250605.dto.*;
 import com.hd.sample_jpa_mysql_250605.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,24 +19,22 @@ public class AuthController {
     private final AuthService authService;
 
     // 회원가입 여부 확인
-    @GetMapping("exists/{email}")   // 정보가 브라우저 주소창에 보여짐
-    public ResponseEntity<Boolean> existByEmail(@PathVariable String email) {
-        boolean isExist = authService.isMember(email);
-        return ResponseEntity.ok(!isExist);
-    }
+//    @GetMapping("exists/{email}")   // 정보가 브라우저 주소창에 보여짐
+//    public ResponseEntity<Boolean> existByEmail(@PathVariable String email) {
+//        boolean isExist = authService.isMember(email);
+//        return ResponseEntity.ok(!isExist);
+//    }
 
 
     // 회원가입
     @PostMapping("/signup") // Body에 정보를 싣는 방식, 정보가 보여지지 않음
-    public ResponseEntity<Boolean> signup(@RequestBody SignUpReqDto memberReqDto) {
-        boolean isSuccess = authService.signup(memberReqDto);
-        return ResponseEntity.ok(isSuccess);
+    public ResponseEntity<MemberResDto> signup(@RequestBody MemberReqDto memberReqDto) {
+        return ResponseEntity.ok(authService.signup(memberReqDto));
     }
 
     // 로그인
     @PostMapping("/login")
-    public ResponseEntity<Boolean> login(@RequestBody LoginReqDto loginReqDto) {
-        boolean isSuccess = authService.login(loginReqDto.getEmail(), loginReqDto.getPwd());
-        return ResponseEntity.ok(isSuccess);
+    public ResponseEntity<TokenDto> login(@RequestBody MemberReqDto memberReqDto) {
+        return ResponseEntity.ok(authService.login(memberReqDto));
     }
 }

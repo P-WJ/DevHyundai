@@ -1,8 +1,7 @@
 package com.hd.sample_jpa_mysql_250605.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.hd.sample_jpa_mysql_250605.constant.Authority;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,6 +11,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,4 +36,19 @@ public class Member {
     private void prePersist() {
         this.regDate = LocalDateTime.now();
     }
+
+    @Enumerated(EnumType.STRING)
+    private Authority authority;
+
+
+    @Builder
+    public Member(String name, String pwd, String email, String image, Authority authority) {
+        this.name = name;
+        this.pwd = pwd;
+        this.email = email;
+        this.image = image;
+        this.authority = authority;
+        this.regDate = LocalDateTime.now();
+    }
+
 }

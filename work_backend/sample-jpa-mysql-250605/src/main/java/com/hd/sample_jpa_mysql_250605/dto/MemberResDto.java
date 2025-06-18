@@ -1,10 +1,8 @@
 package com.hd.sample_jpa_mysql_250605.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.hd.sample_jpa_mysql_250605.entity.Member;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -13,10 +11,19 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class MemberResDto {
     private String email;
     private String name;
-    private String pwd;
     private String image;
     private LocalDateTime regDate;
+
+    public static MemberResDto of(Member member) {
+        return MemberResDto.builder()
+                .name(member.getName())
+                .email(member.getEmail())
+                .image(member.getImage())
+                .regDate(member.getRegDate())
+                .build();
+    }
 }

@@ -1,10 +1,18 @@
 package com.hd.sample_jpa_mysql_250605.service;
 
+import com.hd.sample_jpa_mysql_250605.dto.MemberReqDto;
+import com.hd.sample_jpa_mysql_250605.dto.MemberResDto;
 import com.hd.sample_jpa_mysql_250605.dto.SignUpReqDto;
+import com.hd.sample_jpa_mysql_250605.dto.TokenDto;
 import com.hd.sample_jpa_mysql_250605.entity.Member;
+import com.hd.sample_jpa_mysql_250605.jwt.TokenProvider;
 import com.hd.sample_jpa_mysql_250605.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,40 +23,25 @@ import java.util.Optional;
 @Transactional  // 여러개의 물리적 작업 단위를 논리적 단위로 묶음
 @RequiredArgsConstructor    // 생성자를 자동 생성
 public class AuthService {
-    private final MemberRepository memberRepository;    // 생성자를 통한 의존성 주입 받음
-//    AuthService(MemberRepository memberRepository) {
-//        this.memberRepository = memberRepository;
-//    }
-
-    // 회원가입 여부 확인
-    public boolean isMember(String email) {
-        return memberRepository.existsByEmail(email);
-    }
+    private final AuthenticationManagerBuilder managerBuilder; // 인증을 담당하는 클래스
+    private final MemberRepository memberRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final TokenProvider tokenProvider;
 
     // 회원 가입
-    public boolean signup(SignUpReqDto memberReqDto) {
-        try {
-            Member member = convertDtoToEntity(memberReqDto);
-            memberRepository.save(member);
-            return true;
-        } catch (Exception e) {
-            log.error("회원 가입 시 오류 발생 : {}", e.getMessage());
-            return false;
+    public MemberResDto signup(MemberReqDto requestDto) {
+        if (memberRepository.existsByEmail(requestDto.getEmail())) {
+            throw new RuntimeException("이미 가입되어 있는 유저입니다");
         }
-    }
-    // 로그인
-    public boolean login(String email, String pwd) {
-        Optional<Member> member = memberRepository.findByEmailAndPwd(email, pwd);
-        return  member.isPresent();  // 객체 존재 여부 확인
+        Member member = requestDto.toEntity(passwordEncoder);
+        return MemberResDto.of(memberRepository.save(member));
     }
 
-    //DTO -> Entity Mapping
-    private Member convertDtoToEntity(SignUpReqDto memberReqDto) {
-        Member member = new Member();
-        member.setEmail(memberReqDto.getEmail());
-        member.setPwd(memberReqDto.getPwd());
-        member.setName(memberReqDto.getName());
-        return member;
+    // 로그인
+    public TokenDto login(MemberReqDto requestDto) {
+        UsernamePasswordAuthenticationToken authenticationToken = requestDto.toAuthentication();
+        Authentication authentication = managerBuilder.getObject().authenticate(authenticationToken);
+        return tokenProvider.generateTokenDto(authentication);
     }
 }
 
