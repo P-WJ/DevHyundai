@@ -39,7 +39,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .accessDeniedHandler(jwtAccessDeniedHandler)
                 .and()
-                // 박우진 조는거 다 보인다.
+
                 .authorizeRequests()
                 .antMatchers("/", "/static/**", "/auth/**", "/ws/**").permitAll()
                 .antMatchers("/v2/api-docs", "/swagger-resources/**", "/swagger-ui.html", "/webjars/**", "/swagger/**", "/sign-api/exception").permitAll()
