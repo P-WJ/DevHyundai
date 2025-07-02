@@ -15,9 +15,10 @@ app.add_url_rule("/products/<name>", view_func=update_product, methods=['PUT'])
 app.add_url_rule("/products/<name>", view_func=delete_product, methods=['DELETE'])
 app.add_url_rule("/api/boxoffice", view_func=get_box_office, methods=['GET'])
 
+
 # 스케줄러 등록
 scheduler = BackgroundScheduler()
-scheduler.add_job(fetch_and_store, 'cron', hour=12, minute=37)
+scheduler.add_job(fetch_and_store, 'cron', hour=14, minute=40)
 scheduler.start()
 
 if __name__ == "__main__":
