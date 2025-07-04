@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f693e08-10e8-4380-82b3-834b477cd353" name="Changes" comment="" />
+    <list default="true" id="3f693e08-10e8-4380-82b3-834b477cd353" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/routes/nsmc_ml.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/nsmc_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/mongodb.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/mongodb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../work_backend/sample-jpa-mysql-250605/src/main/java/com/hd/sample_jpa_mysql_250605/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../work_backend/sample-jpa-mysql-250605/src/main/java/com/hd/sample_jpa_mysql_250605/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../work_backend/sample-jpa-mysql-250605/src/main/java/com/hd/sample_jpa_mysql_250605/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../work_backend/sample-jpa-mysql-250605/src/main/java/com/hd/sample_jpa_mysql_250605/service/BoardService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2zFusw9yPp6DlPgqhpdJ74EgZfi" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -21,12 +40,46 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.a.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.nsmc_ml.executor": "Run",
+    "Python.nsmc_test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/DevHyundai/Python/flask_mongodb_250701"
+    "last_opened_file_path": "C:/DevHyundai/Python/flask_mongodb_250701",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="flask_mongodb_250701" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
