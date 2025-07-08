@@ -132,4 +132,10 @@ public class BoardService {
         board.setMember(member);
         return board;
     }
+
+    public Board saveAndReturn(BoardWriteDto boardWriteDto) {
+        Board board = convertDtoToEntity(boardWriteDto);
+        board = boardRepository.save(board);
+        return board;
+    }
 }

@@ -3,13 +3,17 @@ package com.hd.sample_jpa_mysql_250605.controller;
 import com.hd.sample_jpa_mysql_250605.dto.BoardResDto;
 import com.hd.sample_jpa_mysql_250605.dto.BoardWriteDto;
 import com.hd.sample_jpa_mysql_250605.dto.PageResDto;
+import com.hd.sample_jpa_mysql_250605.entity.Board;
 import com.hd.sample_jpa_mysql_250605.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j // Log 메시지 출력을 위한 어노테이션
 @RestController  // Rest API (GET, POST, PUT, DELETE)
@@ -23,9 +27,25 @@ public class BoardController {
     private final BoardService boardService;  // 의존성 주입
     // 게시글 등록 : 입력(BoardWriteDto), 반환(boolean)
     @PostMapping("/new")
+//    public ResponseEntity<Boolean> newBoard(@RequestBody BoardWriteDto boardWriteDto) {
+//        return ResponseEntity.ok(boardService.addBoard(boardWriteDto));
+//    }
     public ResponseEntity<Boolean> newBoard(@RequestBody BoardWriteDto boardWriteDto) {
-        return ResponseEntity.ok(boardService.addBoard(boardWriteDto));
+        Board board = boardService.saveAndReturn(boardWriteDto);
+        // Flask 분석 요청 보내기
+        try {
+            RestTemplate restTemplate = new RestTemplate();
+            Map<String, Object> request = new HashMap<>();
+            request.put("postId",  board.getId());
+            request.put("title", board.getTitle());
+            request.put("content", board.getContent());
+            restTemplate.postForEntity("http://127.0.0.1:5000/analyze", request, Boolean.class);
+        } catch (Exception e) {
+            log.error("Flask 분석 요청 실패: {}", e.getMessage());
+        }
+        return ResponseEntity.ok(true);
     }
+
     // 게시글 수정 : 입력(id, BoardWriteDto), 반환(boolean)
     @PutMapping("/update/{id}")
     public ResponseEntity<Boolean> modifyBoard(@PathVariable Long id, @RequestBody BoardWriteDto boardWriteDto) {
