@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f693e08-10e8-4380-82b3-834b477cd353" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/nsmc_ml.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/nsmc_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/mongodb.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/mongodb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/product.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../work_backend/sample-jpa-mysql-250605/src/main/java/com/hd/sample_jpa_mysql_250605/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../work_backend/sample-jpa-mysql-250605/src/main/java/com/hd/sample_jpa_mysql_250605/controller/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../work_backend/sample-jpa-mysql-250605/src/main/java/com/hd/sample_jpa_mysql_250605/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../work_backend/sample-jpa-mysql-250605/src/main/java/com/hd/sample_jpa_mysql_250605/service/BoardService.java" afterDir="false" />
     </list>
