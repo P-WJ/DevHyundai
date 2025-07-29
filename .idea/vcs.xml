@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/KotlinBasic/Basic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/KotlinBasic/Collection" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/KotlinBasic/Function" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/KotlinBasic/Iteration" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/KotlinBasic/KotlinBasic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/KotlinBasic/Operator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/KotlinBasic/VersionControl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/KotlinBasic/When" vcs="Git" />
+  </component>
+</project>
