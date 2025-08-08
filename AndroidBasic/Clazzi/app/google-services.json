@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "607731742406",
+    "project_id": "clazzi-29242",
+    "storage_bucket": "clazzi-29242.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607731742406:android:d5b1f98c68c24ffce909c7",
+        "android_client_info": {
+          "package_name": "com.example.clazzi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6D2-X7GIyNxQCzozS1psPaPPOPNjF4WE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
