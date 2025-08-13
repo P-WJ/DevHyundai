@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -40,8 +42,19 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.compose.material:material:1.6.8")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0") // Retrofit
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0") // Gson 변환기
+    implementation("io.coil-kt:coil-compose:2.5.0")
+    implementation("com.google.firebase:firebase-storage-ktx:20.3.0")
+    implementation("com.google.firebase:firebase-auth:22.3.0")
+    implementation("androidx.compose.material:material-icons-extended")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation(platform("com.google.firebase:firebase-bom:34.0.0"))
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.0") // 수동추가
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.2")
     implementation("androidx.navigation:navigation-compose:2.9.3")
+    implementation("androidx.compose.material:material-icons-core:1.6.8")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voting App</title>
+  <meta charset="UTF-8">
+  <script>
+    window.onload = function() {
+      // 현재 URL path에서 voteId 추출 (/vote/123 → 123)
+      const pathParts = window.location.pathname.split("/");
+      let voteId = null;
+
+      const voteIndex = pathParts.indexOf("vote");
+      if (voteIndex !== -1 && pathParts.length > voteIndex + 1) {
+        voteId = pathParts[voteIndex + 1];
+      }
+
+      // 앱 딥링크 생성
+      let appLink = "clazzi://vote";
+      if (voteId) {
+        appLink += "/" + voteId;
+      }
+
+      // 앱 실행 시도
+      window.location.href = appLink;
+    };
+  </script>
+</head>
+<body>
+<h1>Opening Voting App...</h1>
+<p>If nothing happens, <a href="https://play.google.com/store/apps/details?id=com.example.clazzi">download the app here</a>.</p>
+</body>
+</html>

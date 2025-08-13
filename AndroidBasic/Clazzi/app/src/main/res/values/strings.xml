@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Clazzi</string>
+    <string name="app_name">우리반 투표앱</string>
+    <string name="vote_list_title">Vote List</string>
 </resources>
