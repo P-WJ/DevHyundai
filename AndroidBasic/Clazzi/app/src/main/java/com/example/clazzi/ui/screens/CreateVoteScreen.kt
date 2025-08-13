@@ -73,6 +73,8 @@ fun CreateVoteScreen(
     // 마감일 스테이트
     var deadlineDate by remember { mutableStateOf<Date?>(null) }
 //    val optionText: List<String> = arrayListOf("항목 1", "항목 2")
+    
+    // 스캐폴드 : 앱의 기본 레이아웃 구조(탑바, 바텀네비게이션 등)을 제공
     Scaffold(
         topBar = {
             TopAppBar(

@@ -25,6 +25,7 @@ object ApiClient {
         .build()
 
     val voteApiService: VoteApiService by lazy{
+        // 레트로핏은 네트워크(Rest API) 통신을 하기 위해 사용하는 라이브러리
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(client)

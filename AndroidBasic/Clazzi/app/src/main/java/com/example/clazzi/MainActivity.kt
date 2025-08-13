@@ -82,7 +82,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
 
-
+                // 네브호스트, 네브컨트롤러: 화면간의 네이게이션(이동) 관리하는 역할
                 NavHost(
                     navController = navController,
                     startDestination = if (isLoggedIn) "main" else "auth"
@@ -165,6 +165,7 @@ fun MainScreen(
     val navController = rememberNavController()
     Scaffold(
         bottomBar = {
+            // 앱의 하단에 여러 화면으로 이동할 수 있는 탭을 제공
             BottomNavigationBar(navController)
         }
     ) { innerPadding ->

@@ -38,6 +38,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -78,7 +79,11 @@ fun VoteScreen(voteId: String, navController: NavController, voteViewModel: Vote
 
     val user = FirebaseAuth.getInstance().currentUser
     val currentUserId = user?.uid ?: "0"
-    var hasVoted by remember { mutableStateOf(false) }
+
+    // 리멤버 : 상태를 기억하지만 화면 회전 등에서 값이 보전되지 않는다.
+    // 리멤버 세이버블: 화면 회전 등에서도 값이 보존된다.
+//    var hasVoted by remember { mutableStateOf(false) }
+    var hasVoted by rememberSaveable { mutableStateOf(false) }
     LaunchedEffect(vote) {
         if (vote != null) {
             hasVoted = vote.voteOptions.any { option ->
