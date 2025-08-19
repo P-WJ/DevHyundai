@@ -88,7 +88,7 @@ struct CardView: View {
         .frame(maxWidth: .infinity, minHeight: 100)
         .background(Color.yellow)
         .cornerRadius(16)
-//        .padding(.horizontal, 16)
+//        .padding(.horizontal, 16) 
     }
 }
 
