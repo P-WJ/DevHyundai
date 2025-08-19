@@ -14,25 +14,25 @@ struct Post: Identifiable {
 // MARK: - 샘플 데이터
 let samplePosts: [Post] = [
     Post(
-        userName: "__imamonkey|||",
+        userName: "추추",
         userImage: "person.circle.fill",
-        postImage: "monkey",
+        postImage: "postImg",
         likeCount: 123,
         caption: "SwiftUI로 인스타그램 클론 만들기 연습 중!",
         timeAgo: "2시간 전"
     ),
     Post(
-        userName: "keonthepeach",
+        userName: "동동",
         userImage: "person.circle.fill",
-        postImage: "surfing",
+        postImage: "postImg",
         likeCount: 987,
         caption: "서핑 가고 싶네...",
         timeAgo: "어제"
     ),
     Post(
-        userName: "developer_john",
+        userName: "우하하하",
         userImage: "person.circle.fill",
-        postImage: "developer",
+        postImage: "postImg",
         likeCount: 456,
         caption: "오늘도 코딩 열심히!",
         timeAgo: "3시간 전"
