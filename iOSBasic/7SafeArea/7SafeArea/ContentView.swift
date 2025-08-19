@@ -12,11 +12,13 @@ struct ContentView: View {
         VStack {
             Text("Hello, world!")
                 .font(.largeTitle)
+                .frame(maxWidth: .infinity)
+                .background(Color.red)
             Spacer()
             Text("Hello, world!")
                 .font(.largeTitle)
         }
-        .ignoresSafeArea(edges: .top) // Safe Area 무시
+//        .ignoresSafeArea(edges: .top) // Safe Area 무시
     }
 }
 
