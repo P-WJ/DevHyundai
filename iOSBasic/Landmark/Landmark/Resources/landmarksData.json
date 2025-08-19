@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "N서울타워",
+        "category": "Towers",
+        "city": "서울",
+        "state": "서울특별시",
+        "isFeatured": true,
+        "isFavorite": false,
+        "park": "남산공원",
+        "coordinates": {
+            "longitude": 126.988205,
+            "latitude": 37.551169
+        },
+        "description": "서울의 중심부에 위치한 N서울타워는 서울을 한눈에 조망할 수 있는 전망 명소로, 야경과 사랑의 자물쇠로 유명한 관광지입니다.",
+        "imageName": "ntower"
+    },
+    {
+        "id": 2,
+        "name": "경복궁",
+        "category": "Palaces",
+        "city": "서울",
+        "state": "서울특별시",
+        "isFeatured": true,
+        "isFavorite": true,
+        "park": "종로구",
+        "coordinates": {
+            "longitude": 126.976889,
+            "latitude": 37.579617
+        },
+        "description": "조선시대의 정궁인 경복궁은 한국의 역사와 전통이 살아 숨 쉬는 대표적인 궁궐로, 화려한 건축미와 조경이 어우러진 관광 명소입니다.",
+        "imageName": "gyeongbokgung"
+    },
+    {
+        "id": 3,
+        "name": "한라산",
+        "category": "Mountains",
+        "city": "제주",
+        "state": "제주특별자치도",
+        "isFeatured": true,
+        "isFavorite": false,
+        "park": "한라산국립공원",
+        "coordinates": {
+            "longitude": 126.531188,
+            "latitude": 33.361666
+        },
+        "description": "한라산은 제주도의 중심에 위치한 휴화산으로, 사계절 아름다운 자연 경관과 다양한 식생을 자랑하는 등산 명소입니다.",
+        "imageName": "hallasan"
+    },
+    {
+        "id": 4,
+        "name": "불국사",
+        "category": "Temples",
+        "city": "경주",
+        "state": "경상북도",
+        "isFeatured": false,
+        "isFavorite": true,
+        "park": "토함산",
+        "coordinates": {
+            "longitude": 129.332417,
+            "latitude": 35.790023
+        },
+        "description": "불국사는 유네스코 세계문화유산으로 지정된 사찰로, 신라시대의 찬란한 불교문화를 보여주는 대표적인 문화유산입니다.",
+        "imageName": "bulguksa"
+    }
+]
