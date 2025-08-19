@@ -33,6 +33,8 @@ struct ContentView3: View {
                             .foregroundColor(.orange)
                         Text(movie.title)
                     }
+                    // 구분선 없애기(List, ForEach 안에서 최상위 뷰 속성으로)
+                    .listRowSeparator(.hidden)
                 }
             }
                     
