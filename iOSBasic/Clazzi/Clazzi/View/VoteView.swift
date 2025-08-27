@@ -11,24 +11,25 @@ struct VoteView: View {
     // 뒤로가기
     @Environment(\.dismiss) private var dismiss
     
-    let options = ["김치찌개", "돈까스"]
     @State private var selectedOption: Int = 0
+    
+    let vote: Vote
     
     var body: some View {
         NavigationStack {
             VStack {
                 Spacer()
                 
-                Text("점메추 무엇???")
+                Text(vote.title)
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding(.bottom)
                 
-                ForEach(options.indices, id: \.self) { index in
+                ForEach(vote.options.indices, id: \.self) { index in
                     Button(action: {
                         selectedOption = index
                     }) {
-                        Text(options[index])
+                        Text(vote.options[index].name)
                             .frame(maxWidth: 200)
                             .padding()
                             .background(index ==
@@ -44,7 +45,7 @@ struct VoteView: View {
                 
                 // 투표하기
                 Button(action: {
-                    print("투표 항목은 \(options[selectedOption])입니다.")
+                    print("투표 항목은 \(vote.options[selectedOption])입니다.")
                     dismiss()
                 }) {
                     Text("투표하기")
@@ -63,5 +64,8 @@ struct VoteView: View {
 }
 
 #Preview {
-    VoteView()
+    VoteView(vote: Vote(title: "첫 번째 투표", options: [
+        VoteOption(name: "A"),
+        VoteOption(name: "B"),
+    ]))
 }
