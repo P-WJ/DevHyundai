@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		8411BC212E5D7A4500C03434 /* Clazzi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clazzi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B89FEE0B2E5D794C00C8DF37 /* Clazzi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clazzi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		8411BC232E5D7A4500C03434 /* Clazzi */ = {
+		B89FEE0D2E5D794C00C8DF37 /* Clazzi */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Clazzi;
 			sourceTree = "<group>";
@@ -19,7 +19,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8411BC1E2E5D7A4500C03434 /* Frameworks */ = {
+		B89FEE082E5D794C00C8DF37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8411BC182E5D7A4500C03434 = {
+		B89FEE022E5D794C00C8DF37 = {
 			isa = PBXGroup;
 			children = (
-				8411BC232E5D7A4500C03434 /* Clazzi */,
-				8411BC222E5D7A4500C03434 /* Products */,
+				B89FEE0D2E5D794C00C8DF37 /* Clazzi */,
+				B89FEE0C2E5D794C00C8DF37 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8411BC222E5D7A4500C03434 /* Products */ = {
+		B89FEE0C2E5D794C00C8DF37 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8411BC212E5D7A4500C03434 /* Clazzi.app */,
+				B89FEE0B2E5D794C00C8DF37 /* Clazzi.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8411BC202E5D7A4500C03434 /* Clazzi */ = {
+		B89FEE0A2E5D794C00C8DF37 /* Clazzi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8411BC2C2E5D7A4600C03434 /* Build configuration list for PBXNativeTarget "Clazzi" */;
+			buildConfigurationList = B89FEE192E5D794E00C8DF37 /* Build configuration list for PBXNativeTarget "Clazzi" */;
 			buildPhases = (
-				8411BC1D2E5D7A4500C03434 /* Sources */,
-				8411BC1E2E5D7A4500C03434 /* Frameworks */,
-				8411BC1F2E5D7A4500C03434 /* Resources */,
+				B89FEE072E5D794C00C8DF37 /* Sources */,
+				B89FEE082E5D794C00C8DF37 /* Frameworks */,
+				B89FEE092E5D794C00C8DF37 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				8411BC232E5D7A4500C03434 /* Clazzi */,
+				B89FEE0D2E5D794C00C8DF37 /* Clazzi */,
 			);
 			name = Clazzi;
 			packageProductDependencies = (
 			);
 			productName = Clazzi;
-			productReference = 8411BC212E5D7A4500C03434 /* Clazzi.app */;
+			productReference = B89FEE0B2E5D794C00C8DF37 /* Clazzi.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8411BC192E5D7A4500C03434 /* Project object */ = {
+		B89FEE032E5D794C00C8DF37 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
-				LastUpgradeCheck = 1640;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					8411BC202E5D7A4500C03434 = {
-						CreatedOnToolsVersion = 16.4;
+					B89FEE0A2E5D794C00C8DF37 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 8411BC1C2E5D7A4500C03434 /* Build configuration list for PBXProject "Clazzi" */;
+			buildConfigurationList = B89FEE062E5D794C00C8DF37 /* Build configuration list for PBXProject "Clazzi" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 8411BC182E5D7A4500C03434;
+			mainGroup = B89FEE022E5D794C00C8DF37;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 8411BC222E5D7A4500C03434 /* Products */;
+			productRefGroup = B89FEE0C2E5D794C00C8DF37 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8411BC202E5D7A4500C03434 /* Clazzi */,
+				B89FEE0A2E5D794C00C8DF37 /* Clazzi */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8411BC1F2E5D7A4500C03434 /* Resources */ = {
+		B89FEE092E5D794C00C8DF37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8411BC1D2E5D7A4500C03434 /* Sources */ = {
+		B89FEE072E5D794C00C8DF37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		8411BC2A2E5D7A4600C03434 /* Debug */ = {
+		B89FEE172E5D794E00C8DF37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -177,7 +177,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -188,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		8411BC2B2E5D7A4600C03434 /* Release */ = {
+		B89FEE182E5D794E00C8DF37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +234,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -244,13 +244,14 @@
 			};
 			name = Release;
 		};
-		8411BC2D2E5D7A4600C03434 /* Debug */ = {
+		B89FEE1A2E5D794E00C8DF37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Clazzi/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -263,7 +264,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wj.Clazzi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Clazzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -271,13 +272,14 @@
 			};
 			name = Debug;
 		};
-		8411BC2E2E5D7A4600C03434 /* Release */ = {
+		B89FEE1B2E5D794E00C8DF37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Clazzi/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -290,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wj.Clazzi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.Clazzi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -301,25 +303,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8411BC1C2E5D7A4500C03434 /* Build configuration list for PBXProject "Clazzi" */ = {
+		B89FEE062E5D794C00C8DF37 /* Build configuration list for PBXProject "Clazzi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8411BC2A2E5D7A4600C03434 /* Debug */,
-				8411BC2B2E5D7A4600C03434 /* Release */,
+				B89FEE172E5D794E00C8DF37 /* Debug */,
+				B89FEE182E5D794E00C8DF37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8411BC2C2E5D7A4600C03434 /* Build configuration list for PBXNativeTarget "Clazzi" */ = {
+		B89FEE192E5D794E00C8DF37 /* Build configuration list for PBXNativeTarget "Clazzi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8411BC2D2E5D7A4600C03434 /* Debug */,
-				8411BC2E2E5D7A4600C03434 /* Release */,
+				B89FEE1A2E5D794E00C8DF37 /* Debug */,
+				B89FEE1B2E5D794E00C8DF37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8411BC192E5D7A4500C03434 /* Project object */;
+	rootObject = B89FEE032E5D794C00C8DF37 /* Project object */;
 }

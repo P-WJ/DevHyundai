@@ -28,7 +28,7 @@ struct AuthView: View {
                 Form {
                     TextField("이메일", text: $email)
                         .keyboardType(.emailAddress)
-                        .autocapitalization(.none) // 자동 대문자 방지
+                        .autocapitalization(.none)   // 자동 대문자 방지
                         .textInputAutocapitalization(.never) // 자동 대문자 방지: iOS 15 이상
                         .disableAutocorrection(true) // 자동 수정 방지
                         .padding()
@@ -40,20 +40,24 @@ struct AuthView: View {
                     ZStack {
                         if isPasswordSecured {
                             SecureField("비밀번호", text: $password)
-                                .autocapitalization(.none) // 자동 대문자 방지
+                                .focused($isFocused)
+                                .autocapitalization(.none)   // 자동 대문자 방지
                                 .textInputAutocapitalization(.never) // 자동 대문자 방지: iOS 15 이상
                                 .disableAutocorrection(true) // 자동 수정 방지
                                 .padding()
+                                .padding(.trailing, 50)
                                 .background(
                                     RoundedRectangle(cornerRadius: 8)
                                         .stroke(Color.gray, lineWidth: 1)
                                 )
                         } else {
                             TextField("비밀번호", text: $password)
-                                .autocapitalization(.none) // 자동 대문자 방지
+                                .focused($isFocused)
+                                .autocapitalization(.none)   // 자동 대문자 방지
                                 .textInputAutocapitalization(.never) // 자동 대문자 방지: iOS 15 이상
                                 .disableAutocorrection(true) // 자동 수정 방지
                                 .padding()
+                                .padding(.trailing, 50)
                                 .background(
                                     RoundedRectangle(cornerRadius: 8)
                                         .stroke(Color.gray, lineWidth: 1)
@@ -64,14 +68,14 @@ struct AuthView: View {
                             Button(action: {
                                 isPasswordSecured.toggle()
                             }) {
-                                Image(systemName: isPasswordSecured ? "eye.slash" : "eye")
-                                    .foregroundStyle(.black)
-                                    .padding(.trailing)
+                                ZStack {
+                                    Image(systemName: isPasswordSecured ? "eye.slash" :"eye")
+                                        .foregroundStyle(.black)
+                                        .padding(.trailing)
+                                }
                             }
                         }
-                        
                     }
-                    
                 }
                 .formStyle(.columns)
                 .padding(.bottom)
@@ -99,17 +103,17 @@ struct AuthView: View {
                     }
                 }
                 
-                
                 Button(action: {
                     if isLogin {
-                        if let currentUser = users.first(where: { $0.email == email && $0.password == password}) {
+                        // 아이템 꺼내오기
+                        if let currentUser = users.first(where: { $0.email == email && $0.password == password }) { // 로그인 하기
                             print("로그인 성공")
                             currentUserID = currentUser.id
                             UserDefaults.standard.set(currentUser.id.uuidString, forKey: "currentUserID")
                         } else {
                             print("로그인 실패")
                         }
-                    } else {
+                    } else { // 회원가입 하기
                         let newUser = User(email: email, password: password)
                         modelContext.insert(newUser)
                         do {
@@ -139,30 +143,15 @@ struct AuthView: View {
             .navigationTitle(Text(isLogin ? "로그인" : "회원가입"))
             .padding()
             .toolbar {
-                ToolbarItem(placement:
-                        .navigationBarTrailing) {
-                            NavigationLink(destination:
-                                UserListView()) {
-                                    Image(systemName: "person")
-                                }
-                            }
-                        }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: UserListView()) {
+                        Image(systemName: "person")
+                    }
+                }
             }
         }
     }
-    
-//struct AuthView_Previews: PreviewProvider {
-//  struct Wrapper: View {
-//    @State var isLoggedIn: Bool = false
-//    var body: some View {
-//      AuthView(isLoggedIn: $isLoggedIn)
-//    }
-//  }
-//  static var previews: some View {
-//    Wrapper()
-//  }
-//}
-
+}
 
 #Preview {
     @Previewable @State var currentUserID: UUID? = nil
