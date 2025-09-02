@@ -25,7 +25,11 @@ struct VoteListView: View {
             ScrollView {
                 LazyVStack(spacing: 16) {
                     ForEach(voteViewModel.votes) { vote in
-                        NavigationLink(destination: VoteView(vote: vote)) {
+                        NavigationLink(destination: VoteView(vote: vote) { vote in
+                            Task {
+                                await voteViewModel.updateVote(vote)
+                            }
+                        }) {
                             VoteCardView(vote: vote) {
                                 voteToDelete = vote
                                 showDeleteAlert = true
@@ -42,24 +46,29 @@ struct VoteListView: View {
             .toolbar {
 //                 투표 생성
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: VoteEditorView { newVote in
-                        voteViewModel.createVote(newVote)
+                    NavigationLink(destination: VoteEditorView { newVote, selectedIamge in
+                        Task {
+                            await voteViewModel.createVote(newVote, image: selectedIamge)
+                        }
                     }) {
                         Image(systemName: "plus")
                     }
                 }
                 // 마이페이지
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: MyPageView()) {
-                        Image(systemName: "person")
-                    }
-                }
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    NavigationLink(destination: MyPageView()) {
+//                        Image(systemName: "person")
+//                    }
+//                }
             }
             // 수정화면 띄우기
             .navigationDestination(isPresented: $isPresentingEdit) {
                 if let vote = voteToEdit {
-                    VoteEditorView(vote: vote) { updatedVote in
-                        voteViewModel.updateVote(updatedVote)
+                    VoteEditorView(vote: vote) { updatedVote, selectedIamge in
+                        Task {
+                            await voteViewModel.updateVote(updatedVote, image: selectedIamge)
+                        }
+                        
                         
                     }
                 }
@@ -85,6 +94,8 @@ struct VoteListView: View {
 }
 
 struct VoteCardView: View {
+    @EnvironmentObject var session: UserSession
+
     let vote: Vote
     let onDelete: () -> Void
     let onEdit: () -> Void
@@ -100,18 +111,21 @@ struct VoteCardView: View {
                     .foregroundColor(.white)
             }
             Spacer()
-            Button(action: {
-                onEdit()
-            }) {
-                Image(systemName: "pencil")
-                    .foregroundStyle(.white)
+            if let user = session.user, vote.createdBy == user.uid {
+                Button(action: {
+                    onEdit()
+                }) {
+                    Image(systemName: "pencil")
+                        .foregroundStyle(.white)
+                }
+                Button(action: {
+                    onDelete()
+                }) {
+                    Image(systemName: "trash")
+                        .foregroundStyle(.white)
+                }
             }
-            Button(action: {
-                onDelete()
-            }) {
-                Image(systemName: "trash")
-                    .foregroundStyle(.white)
-            }
+
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)

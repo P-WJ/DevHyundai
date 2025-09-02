@@ -29,7 +29,7 @@ struct ClazziFirebaseApp: App {
                 } else if session.user == nil {
                     AuthView()
                 } else {
-                    VoteListView()
+                    MainView()
                 }
             }
             .onAppear {
