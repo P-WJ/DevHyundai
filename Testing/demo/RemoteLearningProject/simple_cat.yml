@@ -1,0 +1,29 @@
+cat:
+  name: Oreshek
+  gender: male
+  breed: mongrel
+  personality_type: skittishness
+  # long haired, short haired or hairless
+  fur_type: short haired
+  # solid, tabby or multi-color
+  fur_pattern: solid
+  fur_colors: [ black ]
+  tail_length: short
+  eyes_colors: [ brown ]
+
+  eyes_number: 2
+  ear_number: 2
+  paws_number: 4
+
+  favourite_things:
+    - bunch of candy wrappers
+    - tennis ball
+    - plush mouse
+
+  behavior:
+    - eat:
+        condition: want to eat
+        actions: [quietly ask for food]
+    - sleep:
+        condition: want to sleep
+        actions: [find any place and lie down]

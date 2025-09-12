@@ -1,0 +1,31 @@
+cat:
+  name: Marsy
+  gender: female
+  breed: martian longhair
+  personality_type: impulsiveness
+  fur_type: long haired
+  fur_pattern: solid
+  fur_colors: [ red ]
+  tail_length: short
+  eyes_colors: [ red, blue ]
+
+  eyes_number: 2
+  ears_number: 4
+  paws_number: 4
+
+  favourite_things:
+    -marsian flowers
+    - two rovers
+    - crumpled Tesla roadster
+
+  behavior:
+    - drive:
+        condition: boring
+        actions:
+          - put stones on the pedals
+          - steer standing on hind paws
+    - communicate:
+        condition: want to speak with someone
+        actions:
+          - turn on one of the rovers
+          - meow "Hmeowston, are meow hmeowing meo?"

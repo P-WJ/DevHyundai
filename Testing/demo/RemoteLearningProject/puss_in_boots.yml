@@ -1,0 +1,26 @@
+cat:
+  name: Puss in boots
+  gender: male
+  breed: scottish fold
+  personality_type: outgoingness
+  fur_type: short haired
+  fur_pattern: tabby
+  fur_colors: [ red, white ]
+  tail_length: long
+  eyes_colors: [ green ]
+
+  eyes_number: 2
+  ear_number: 2
+  paws_number: 4
+
+  favourite_things:
+    - boots
+    - sharp sword
+    - awesome hat
+    - black cloak
+
+  behavior:
+    - be_cute:
+        condition: wants everyone to come to tenderness
+        actions:
+          - make pretty eyes
